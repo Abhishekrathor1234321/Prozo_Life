@@ -1,0 +1,947 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prozo-Life - Login</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media.css"/>
+</head>
+<body>
+
+
+  <!-- Customer Login Modal -->
+<div class="modal fade" id="customerLoginModal" tabindex="-1" aria-labelledby="customerLoginModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered customer">
+    <div class="modal-content bg-white text-white rounded-4 shadow">
+      <div class="modal-header border-bottom-0">
+        <h5 class="modal-title text-success mb-0 pb-0 d-flex justify-content-center text-align-center" id="customerLoginModalLabel">
+          Customer Login
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <form action="#">
+          <input type="text" id="username" class="form-control mb-3" placeholder="Enter your username" required />
+          <input type="password" id="password" class="form-control mb-3" placeholder="Enter your password" required />
+          <button type="button" class="btn btn-primary w-100 fw-bold" onclick="window.location.href='leadingCustomer.html'">Login</button>
+        </form>
+        <div class="mt-2 fw-bold">
+          <p style="background: linear-gradient(to right, #0ACEFE, #3e698f);">
+            New customer?
+           <a href="#" class="text-dark" data-bs-toggle="modal" data-bs-target="#customerSignUpModal" data-bs-dismiss="modal">Sign up</a>
+
+          </p>
+          <p><a href="#" class="text-dark">Forgot Password?</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Developer Option Modal -->
+<div class="modal fade" id="developerLoginModal" tabindex="-1" aria-labelledby="developerLoginModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-white text-dark rounded-4 shadow">
+      <div class="modal-header border-bottom-0">
+        <h5 class="modal-title text-success" id="developerLoginModalLabel">Join as Developer</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body text-center">
+        <p class="mb-4">Select how you want to join:</p>
+        <button class="btn btn-outline-primary w-100 mb-3 fw-bold" data-bs-toggle="modal" data-bs-target="#individualDeveloperModal" data-bs-dismiss="modal">
+          👤 Join as Individual
+        </button>
+        <button class="btn btn-outline-secondary w-100 fw-bold" data-bs-toggle="modal" data-bs-target="#groupDeveloperModal" data-bs-dismiss="modal">
+          👥 Join as Group
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Individual Developer Login Modal -->
+
+<div class="modal fade" id="individualDeveloperModal" tabindex="-1" aria-labelledby="individualDeveloperModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-light text-dark rounded-4 shadow">
+      <div class="modal-header border-bottom-0">
+        <h5 class="modal-title text-warning" id="individualDeveloperModalLabel">Developer Login (Individual)</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <form>
+          <input type="text" class="form-control mb-3" placeholder="Enter your username" required />
+          <input type="password" class="form-control mb-3" placeholder="Enter your password" required />
+          <button type="button" class="btn btn-primary w-100 fw-bold" onclick="window.location.href='leadingDeveloperIndividual.html'">Login</button>
+        </form>
+        <div class="mt-3">
+          <p>New developer?
+            <a href="#" class="text-info" data-bs-toggle="modal" data-bs-target="#individualSignUpModal" data-bs-dismiss="modal">Sign up</a>
+          </p>
+          <p><a href="#" class="text-dark">Forgot Password?</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Group Developer Login Modal -->
+<div class="modal fade" id="groupDeveloperModal" tabindex="-1" aria-labelledby="groupDeveloperModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-light text-dark rounded-4 shadow">
+      <div class="modal-header border-bottom-0">
+        <h5 class="modal-title text-warning" id="groupDeveloperModalLabel">Developer Login (Group)</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <form>
+          <input type="text" class="form-control mb-3" placeholder="Group username" required />
+          <input type="password" class="form-control mb-3" placeholder="Password" required />
+          <button type="button" class="btn btn-warning w-100 fw-bold" onclick="window.location.href='leadingDeveloperGroup.html'">Login</button>
+        </form>
+        <div class="mt-3">
+          <p>New group?
+            <a href="#" class="text-info" data-bs-toggle="modal" data-bs-target="#groupSignUpModal" data-bs-dismiss="modal">Sign up</a>
+          </p>
+          <p><a href="#" class="text-dark">Forgot Password?</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Universal Sign Up Modal -->
+<div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="signUpModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered signup">
+    <div class="modal-content bg-white text-dark rounded-4 shadow">
+      
+      <!-- Modal Header -->
+      <div class="modal-header border-bottom-0">
+        <h5 class="modal-title text-primary" id="signUpModalLabel">Create Your Account</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      
+      <!-- Modal Body -->
+      <div class="modal-body text-center">
+        <form action="#">
+          <input type="text" class="form-control mb-3" placeholder="Full Name" required />
+          <input type="email" class="form-control mb-3" placeholder="Email Address" required />
+          <input type="text" class="form-control mb-3" placeholder="Username" required />
+          <input type="password" class="form-control mb-3" placeholder="Password" required />
+          <input type="password" class="form-control mb-3" placeholder="Confirm Password" required />
+          <button type="submit" class="btn btn-success w-100 fw-bold">Sign Up</button>
+        </form>
+
+        <!-- Login redirect -->
+        <div class="mt-3">
+          <p class="text-dark">Already have an account?
+            <a href="#" class="text-info" data-bs-toggle="modal" data-bs-target="#customerLoginModal" data-bs-dismiss="modal">Login</a>
+          </p>
+        </div>
+
+        <!-- Back button -->
+        <div class="mt-2">
+          <button type="button" class="btn btn-outline-secondary w-100" onclick="goBackToPreviousModal()">← Back to Login</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+<!-- Individual Developer Sign-Up Modal -->
+<div class="modal fade" id="individualSignUpModal" tabindex="-1" aria-labelledby="individualSignUpModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-white text-dark rounded-4 shadow">
+      <div class="modal-header border-bottom-0">
+        <h5 class="modal-title text-warning" id="individualSignUpModalLabel">Sign Up as Individual Developer</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body text-center">
+        <form>
+          <input type="text" class="form-control mb-3" placeholder="Full Name" required />
+          <input type="email" class="form-control mb-3" placeholder="Email" required />
+          <input type="text" class="form-control mb-3" placeholder="Developer Username" required />
+          <input type="password" class="form-control mb-3" placeholder="Password" required />
+          <input type="password" class="form-control mb-3" placeholder="Confirm Password" required />
+          <button type="submit" class="btn btn-warning w-100 fw-bold">Register</button>
+        </form>
+        <p class="mt-3">Already registered?
+          <a href="#" class="text-info" data-bs-toggle="modal" data-bs-target="#individualDeveloperModal" data-bs-dismiss="modal">Login</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Group Developer Sign-Up Modal -->
+<div class="modal fade" id="groupSignUpModal" tabindex="-1" aria-labelledby="groupSignUpModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-white text-dark rounded-4 shadow">
+      <div class="modal-header border-bottom-0">
+        <h5 class="modal-title text-warning" id="groupSignUpModalLabel">Sign Up as Group Developer</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body text-center">
+        <form>
+          <input type="text" class="form-control mb-3" placeholder="Group Name" required />
+          <input type="email" class="form-control mb-3" placeholder="Group Email" required />
+          <input type="text" class="form-control mb-3" placeholder="Group Username" required />
+          <input type="password" class="form-control mb-3" placeholder="Password" required />
+          <input type="password" class="form-control mb-3" placeholder="Confirm Password" required />
+          <button type="submit" class="btn btn-warning w-100 fw-bold">Register</button>
+        </form>
+        <p class="mt-3">Already registered?
+          <a href="#" class="text-info" data-bs-toggle="modal" data-bs-target="#groupDeveloperModal" data-bs-dismiss="modal">Login</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- customer Sign-Up Modal-->
+<div class="modal fade" id="customerSignUpModal" tabindex="-1" aria-labelledby="customerSignUpModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-white text-dark rounded-4 shadow">
+      <div class="modal-header border-bottom-0">
+        <h5 class="modal-title text-primary" id="customerSignUpModalLabel">Create Customer Account</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body text-center">
+        <form action="#">
+          <input type="text" class="form-control mb-3" placeholder="Full Name" required />
+          <input type="email" class="form-control mb-3" placeholder="Email Address" required />
+          <input type="text" class="form-control mb-3" placeholder="Username" required />
+          <input type="password" class="form-control mb-3" placeholder="Password" required />
+          <input type="password" class="form-control mb-3" placeholder="Confirm Password" required />
+          <button type="submit" class="btn btn-success w-100 fw-bold">Sign Up</button>
+        </form>
+        <p class="mt-3">Already have an account? <a href="#" class="text-info" data-bs-toggle="modal" data-bs-target="#customerLoginModal" data-bs-dismiss="modal">Login</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- JavaScript to track previous modal and go back -->
+<script>
+  let previousModal = null;
+
+  document.querySelectorAll('[data-bs-target="#signUpModal"]').forEach(link => {
+    link.addEventListener('click', function () {
+      previousModal = this.getAttribute('data-prev-modal');
+    });
+  });
+
+  function goBackToPreviousModal() {
+    const signUpModalEl = document.getElementById('signUpModal');
+    const signUpModal = bootstrap.Modal.getInstance(signUpModalEl);
+    signUpModal.hide();
+
+    if (previousModal) {
+      const modalToShow = document.querySelector(previousModal);
+      const newModal = new bootstrap.Modal(modalToShow);
+      newModal.show();
+    }
+  }
+</script>
+
+
+
+
+
+  
+  
+
+
+
+ <!-- Navbar with ChatBot button triggering modal -->
+<header class="container-fluid custom-fixed-top ">
+  <div class="container gy-0 gx-0">
+    <div class="row rows">
+      <div class="col-12">
+        <nav class="navbar navbar-expand-lg">
+          <a href="home.html" class="navbar-brand d-flex align-items-center gap-2">
+            <img src="logo.jpg" alt="Logo" width="120">
+            <h2>Prozo-Life</h2>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                  aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav custom-nav align-items-center">
+              <li class="nav-item active"><a href="#home" class="nav-link">Home</a></li>
+              <li class="nav-item"><a href="#about" class="nav-link">About us</a></li>
+              <li class="nav-item"><a href="#service" class="nav-link">Services</a></li>
+              <li class="nav-item"><a href="#how-we-work" class="nav-link">How we work</a></li>
+              <li class="nav-item"><a href="#contact" class="nav-link">Contact Us</a></li>
+              <li class="nav-item">
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#chatBotModal">ChatBot</button>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ChatBot Modal -->
+
+<div class="modal fade" id="chatBotModal" tabindex="-1" aria-labelledby="chatBotModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content shadow rounded-4" style="width: 500px; height: 300px; margin: auto;">
+      <div class="modal-header bg-primary text-white py-2 px-3">
+        <h6 class="modal-title" id="chatBotModalLabel">Prozo-Life ChatBot</h6>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-2" style="overflow-y: auto; background-color: white;">
+        <div id="chat-body" style="font-size: 14px;">
+          <div class="bot-msg">👋 Hi! I'm your assistant. Ask anything about Prozo-Life!</div>
+        </div>
+      </div>
+      <div class="modal-footer p-2">
+        <div class="input-group input-group-sm">
+          <input type="text" id="user-input" class="form-control" placeholder="Type your message...">
+          <button class="btn btn-primary" onclick="handleChat()">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Styles for Chat -->
+<style>
+  
+  .chat{
+      width: 500px;
+      height: 500px;
+  }
+  #chat-body {
+    font-size: 14px;
+    padding: 10px;
+  }
+  .user-msg {
+    text-align: right;
+    margin-bottom: 8px;
+    color: #0d6efd;
+  }
+  .bot-msg {
+    text-align: left;
+    margin-bottom: 8px;
+    color: #333;
+  }
+</style>
+
+<!-- Chatbot Script -->
+<script>
+  function handleChat() {
+    const input = document.getElementById('user-input');
+    const question = input.value.trim();
+    if (question === '') return;
+
+    const chatBody = document.getElementById('chat-body');
+    chatBody.innerHTML += `<div class="user-msg">${question}</div>`;
+    input.value = '';
+
+    setTimeout(() => {
+      const response = getBotResponse(question.toLowerCase());
+      chatBody.innerHTML += `<div class="bot-msg">${response}</div>`;
+      chatBody.scrollTop = chatBody.scrollHeight;
+    }, 500);
+  }
+
+  function getBotResponse(input) {
+    input = input.toLowerCase();
+
+    if (input.includes("hello") || input.includes("hi")) {
+      return "Hello! 👋 How can I assist you with Prozo-Life today?";
+    }
+
+    if (input.includes("services") || input.includes("offer")) {
+      return "We offer Website Development, Mobile Apps, AI/ML Solutions, UI/UX Design, and Freelance Project Collaboration.";
+    }
+
+    if (input.includes("join") && input.includes("developer")) {
+      return "To join as a developer, kindly visit our homepage and click on 'Join As Developer'. Fill in your details and our team will contact you.";
+    }
+
+    if (input.includes("join") && (input.includes("client") || input.includes("customer"))) {
+      return "If you're a client, please click on 'Join As Customer' on the homepage. We’ll assign a qualified developer based on your project.";
+    }
+
+    if (input.includes("project") || input.includes("real-world") || input.includes("work")) {
+      return "We allocate real-world projects to verified developers based on their skill level, availability, and past performance.";
+    }
+
+    if (input.includes("fees") || input.includes("cost") || input.includes("charges") || input.includes("pricing")) {
+      return "There is no upfront cost for developers. Clients are charged based on project complexity, timeline, and technology.";
+    }
+
+    if (input.includes("batch") || input.includes("start") || input.includes("onboarding")) {
+      return "Our next onboarding batch begins on **11th June**. Registrations are currently open.";
+    }
+
+    if (input.includes("timing") || input.includes("schedule")) {
+      return "Live sessions and project guidance generally take place at **10:00 AM daily**. However, schedules may vary by project.";
+    }
+
+    if (input.includes("certificate") || input.includes("certification") || input.includes("experience") || input.includes("proof")) {
+      return "Yes, developers receive experience letters and Prozo-Life certificates after successful project completion.";
+    }
+
+    if (input.includes("guidance") || input.includes("support") || input.includes("mentor")) {
+      return "We assign mentors and offer daily guidance sessions at 10 AM to assist developers throughout their project journey.";
+    }
+
+    if (input.includes("location") || input.includes("office") || input.includes("remote")) {
+      return "Prozo-Life is fully remote. Developers and clients can participate from anywhere in India.";
+    }
+
+    if (input.includes("faq") || input.includes("question") || input.includes("doubt")) {
+      return "Visit the FAQ section on our site to find answers about registration, services, certification, and more.";
+    }
+
+    if (input.includes("team") || input.includes("founder") || input.includes("who are you") || input.includes("who")) {
+  return "Prozo-Life was founded by Pankaj Kumar (Data Science Lead), Abhishek Rathor (Web Developer), and Arti Verma (UI/UX Designer). Together, we empower students with real-world experience by offering services and mentorship through live projects.";
+}
+
+    if (input.includes("contact") || input.includes("help") || input.includes("support")) {
+      return "You can contact us via WhatsApp at +91 78146 22250 or call us directly at +91 72475 99094.";
+    }
+
+    if (input.includes("ui") || input.includes("design")) {
+      return "We offer modern UI/UX design services for mobile apps and websites at affordable rates.";
+    }
+
+    if (input.includes("mobile") || input.includes("app")) {
+      return "Yes! We build Android and cross-platform apps tailored to your business needs.";
+    }
+
+    if (input.includes("website")) {
+      return "We develop responsive, modern websites — portfolios, landing pages, and full-stack web apps included.";
+    }
+
+    if (input.includes("ai") || input.includes("machine learning")) {
+      return "Our AI/ML services include chatbot development, predictive models, and custom business intelligence tools.";
+    }
+
+    if (input.includes("form") || input.includes("partner")) {
+      return "To become a partner, fill out the 'Partner with Prozo-Life' form available on our homepage.";
+    }
+
+    return "I'm sorry, I didn't quite understand that. 🤔 You can ask me about services, joining, certification, batch start, or contact info.";
+  }
+</script>
+
+
+
+
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
+
+    <section class="container-fluid py-lg-5 py-sm-4  py-2">
+        <div class="container">
+            <div class="row justify-content-between gy-4 align-items-start " id="home">
+                <div class="col-lg-6">
+                    <div class="bannercontent">
+                    <h1 class="typewriter-text">
+                        Welcome To <span id="typewriter-text" class="text-primary"></span>
+                    </h1>
+                
+                        <p class="fst-italic   fs-6 d-inline  " >Bridging the gap between skilled students and real-world projects</p>
+                        <ul class="p-0 m-0 ">
+                            <li class="mb-3 mt-3 "> <i class="fa-solid fa-circle-check"></i>Connect student developers with real-world clients for practical exposure.</li>
+                            <li class="mb-3"> <i class="fa-solid fa-circle-check"></i>Support learners from first-year beginners to final-year professionals.</li>
+                            <li class="mb-3"> <i class="fa-solid fa-circle-check"></i>Offer hands-on projects to build real industry experience.</li>
+                            <li class="mb-3"> <i class="fa-solid fa-circle-check"></i>Bridge the gap between classroom learning and career readiness.</li>
+                        </ul>
+                        <div class="bannercontentbtn d-flex gap-3 ">
+                        
+                           <button class="demobtn fw-bold" data-bs-toggle="modal" data-bs-target="#developerLoginModal"> <i class="fa-solid fa-laptop-code"></i> Join As  Developer</button>
+                          <button class="btn btn-p bg-warning" data-bs-toggle="modal" data-bs-target="#customerLoginModal"> <i class="fa-solid fa-person-military-pointing" ></i>  Join As Customer</button>
+                        </div>
+
+                      <div class=" photo col-lg-2 d-flex gap-5 text-align-center">
+                  <div class="pankaj mt-5 ms-5 text-center ">
+                     <img src="pankaj.jpg" alt="Logo" width="120">
+                     <h6 class="fw-bold ">Pankaj Kumar </h6>
+                     <p class=" pt-0  fst-italic">Data Science Lead</p>
+                    </div>
+                      <div class="pankaj mt-5 ms-5 text-center ">
+                     <img src="Abhishek-photo.jpg" alt="Logo" width="120">
+                     <h6 class="fw-bold ">Abhishek Rathor </h6>
+                     <p class=" pt-0  fst-italic"> Web-Developer </p>
+                    </div>
+
+                      <div class="pankaj mt-5 ms-5 text-center ">
+                     <img src="arti-photo.jpg" alt="Logo" width="120">
+                     <h6 class="fw-bold ">Arti Verma </h6>
+                     <p class=" pt-0  fst-italic"> UI/UX Designer </p>
+                    </div>
+                </div>
+
+
+
+                    </div>
+                    
+                </div>
+                
+                <div class="col-lg-5">
+  <form action="" class="bannerform shadow-lg p-4 bg-light rounded-4">
+    <h4 class="fw-bold text-primary text-center mb-2">Partner with PROZO LIFE</h4>
+    <p class="text-muted small text-center mb-4">
+      Let’s grow together! Join us to make a real difference in the health & wellness space.
+    </p>
+
+    <div class="mb-3">
+      <label class="form-label">Business Name</label>
+      <input type="text" class="form-control" placeholder="Your company name">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Contact Person</label>
+      <input type="text" class="form-control" placeholder="Your full name">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Email Address</label>
+      <input type="email" class="form-control" placeholder="you@example.com">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Phone Number</label>
+      <div class="input-group">
+        <span class="input-group-text">+91</span>
+        <input type="text" class="form-control" placeholder="10-digit number">
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Type of Partnership</label>
+      <select class="form-select">
+        <option disabled selected>Select type</option>
+        <option>Product Supplier</option>
+        <option>Fitness Trainer</option>
+        <option>Diet Consultant</option>
+        <option>Event Partner</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">About Your Business</label>
+      <textarea class="form-control" rows="3" placeholder="Brief about your idea or services..."></textarea>
+    </div>
+
+    <div class="d-grid mt-3">
+      <button class="btn btn-primary fw-bold">Submit Request</button>
+    </div>
+  </form>
+    </div>
+
+            </div>
+        </div>
+        <div class="container shadow-lg mt-5 counterselection">
+          <div class=" row p-4" style="background-color:whitesmoke;">
+          <div class="col">
+            <h4 style="background: linear-gradient(to right, #c3dce3, #6a747c);"> 1000+ Developer onboarded</h4>
+            <p class="text-center">From beginners to pros,ready to deliver</p>
+          </div>
+         
+          <div class="col">
+             <h4 style="background: linear-gradient(to right, #c3dce3, #6a747c);"> 320+ successful project Matches</h4>
+            <p class="text-center">Between students & industry clients</p>
+          </div>
+          <div class="col">
+             <h4 style="background: linear-gradient(to right, #c3dce3, #6a747c);"> Daily Engagements at 10:00AM </h4>
+            <p class="text-center">Live guidance,tasks & tracking </p>
+          </div>
+         
+           
+          </div>
+        </div>
+
+    </section>
+
+
+ <section id="service" class="container-fluid highlight-section py-5">
+      <div class="container"> 
+        <div class="row mb-4">
+          <div class="col-12">
+             <h2>Our Services</h2>
+            <P>Join Prozo-Life as a Developer to build, or as a Customer to get things built.</P>
+           </div>
+        </div> 
+        <div class="row gy-4"> 
+          <div class ="col-lg-4 col-sm-6 col-12 ">
+             <div class="bg-white  p-3 d-flex align-items-start gap-3 highlight-item"> 
+              <div class="test ">
+              <i class="fa-solid fa-laptop-code"></i>
+              </div> 
+               <div><h4 > Website Development</h4>
+                     <p class="fst-italic bg-info d-inline">Test your knowledge</p>
+                </div>     
+             </div>
+          </div>
+          <div class ="col-lg-4 col-sm-6 col-12 ">
+             <div class="bg=-white p-3 d-flex align-items-start gap-3 highlight-item"> 
+              <div class="test ">
+               <i class="fa-solid fa-mobile-screen"></i>
+              </div> 
+               <div><h4 >Mobile App Development</h4>
+                     <p class="fst-italic  bg-info d-inline  ">Stand out to your professional</p>
+                </div>     
+             </div>
+          </div>
+          <div class ="col-lg-4 col-sm-6 col-12 ">
+             <div class="bg-white p-3 d-flex align-items-start gap-3 highlight-item"> 
+              <div class="test ">
+              <i class="fa-solid fa-hexagon-nodes-bolt"></i>
+              </div> 
+               <div><h4 >AI & Machine Learning Solutions</h4>
+                     <p class="fst-italic bg-info d-inline ">Best of both worlds of learning</p>
+                </div>     
+             </div>
+          </div>
+          <div class ="col-lg-4 col-sm-6 col-12 ">
+             <div class="bg-white p-3 d-flex align-items-start gap-3 highlight-item"> 
+              <div class="test ">
+             <i class="fa-brands fa-uikit"></i>
+              </div> 
+               <div><h4 >UI/UX Design</h4>
+                     <p class="fst-italic bg-info d-inline">with lifetime access</p>
+                </div>     
+             </div>
+          </div>
+          <div class ="col-lg-4 col-sm-6 col-12 ">
+             <div class="bg-white p-3 d-flex align-items-start gap-3 highlight-item"> 
+              <div class="test ">
+               <i class="fa-solid fa-network-wired"></i>
+              </div> 
+               <div><h4 >Freelance Project Collaboration</h4>
+                     <p class="fst-italic bg-info d-inline">Get practical skills</p>
+                </div>     
+             </div>
+          </div>
+         
+          
+        </div>
+      </div>
+
+
+    </section>
+
+  <section id="how-we-work" class="container-fluid highlight-section highlight-section py-5">
+      <div class="container"> 
+        <div class="row mb-4">
+          <div class="col-12">
+             <h2>How We Work</h2>
+             <p class="fw-bold fst-italic"> We bring together aspiring developers and clients through a structured workflow:</p>
+             <ol class="fw-normal">
+              <li>
+                Clients submit their project requirements.
+              </li>
+              <li>We assign a team of vetted student developers based on skills.</li>
+              <li>Regular updates and communication are maintained throughout the project.</li>
+              <li>Final delivery with client feedback and certification for developers.</li>
+            </ol>
+             </div>
+        </div>
+        </div>
+  </section>
+
+
+
+<!-- FAQ Section -->
+<section id="faq-section" class="container-fluid py-5" style="background: #f8f9fa;">
+  <div class="container " id="question">
+    <div class="row mb-4">
+      <div class="col-12">
+        <h2 class="text-primary">Frequently Asked Questions</h2>
+        <p class="fw-bold fst-italic text-success">Everything you need to know about our services and processes:</p>
+      </div>
+    </div>
+
+    <div class="accordion" id="faqAccordion">
+      <!-- Q1 -->
+      <div class="accordion-item bg-white border mb-3">
+        <h2 class="accordion-header">
+          <button class="accordion-button text-dark bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#q1">
+            <span class="faq-number">1</span>
+            Who can register as a developer on Prozo-Life?
+          </button>
+        </h2>
+        <div id="q1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body text-secondary">
+            Any student with technical skills (like web development, app development, UI/UX, etc.) can register as a developer — whether you're in first year or final year.
+          </div>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="accordion-item bg-white border mb-3">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed text-dark bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#q2">
+            <span class="faq-number">2</span>
+            I’m a beginner. Will I get help during the project?
+          </button>
+        </h2>
+        <div id="q2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body text-secondary">
+            Yes, beginner developers receive guidance and regular support from mentors. We ensure you learn while working on real-world projects.
+          </div>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="accordion-item bg-white border mb-3">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed text-dark bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#q3">
+            <span class="faq-number">3</span>
+            How do clients choose developers for their projects?
+          </button>
+        </h2>
+        <div id="q3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body text-secondary">
+            Clients can view developer profiles based on their skills and past work. They either post their requirements or directly choose from available developers.
+          </div>
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="accordion-item bg-white border mb-3">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed text-dark bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#q4">
+            <span class="faq-number">4</span>
+            What kind of services can a client request on Prozo-Life?
+          </button>
+        </h2>
+        <div id="q4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body text-secondary">
+            Clients can request services like website development, app creation, UI/UX design, chatbot integration, automation, and more — all at student-friendly rates.
+          </div>
+        </div>
+      </div>
+
+      <!-- Q5 -->
+      <div class="accordion-item bg-white border mb-3">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed text-dark bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#q5">
+            <span class="faq-number">5</span>
+            Will developers get certification or experience letters?
+          </button>
+        </h2>
+        <div id="q5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body text-secondary">
+            Yes, on successful completion of projects, developers receive experience letters and performance feedback — useful for resumes and career building.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- Include Bootstrap CSS -->
+<section class="contact-section py-5 bg-light " id="contact">
+  <div class="container">
+    <h2 class="text-center mb-4 fw-bold">Contact Us</h2>
+
+    <div class="row g-4 justify-content-center">
+      <!-- Email -->
+      <div class="col-md-4 col-sm-6">
+        <a href="mailto:support@prozo-life.com" class="text-decoration-none text-dark">
+          <div class="card h-100 shadow-sm text-center p-3">
+            <div class="card-body">
+              <i class="bi bi-envelope-fill display-5 text-primary mb-3"></i>
+              <h5 class="card-title">Email</h5>
+              <p class="card-text">support@prozo-life.com</p>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Phone -->
+      <div class="col-md-4 col-sm-6">
+        <a href="tel:+919883017317" class="text-decoration-none text-dark">
+          <div class="card h-100 shadow-sm text-center p-3">
+            <div class="card-body">
+              <i class="bi bi-telephone-fill display-5 text-success mb-3"></i>
+              <h5 class="card-title">Phone</h5>
+              <p class="card-text">+91-9883017317</p>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Location -->
+      <div class="col-md-4 col-sm-12">
+        <a href="https://www.google.com/maps/place/India" target="_blank" class="text-decoration-none text-dark">
+          <div class="card h-100 shadow-sm text-center p-3">
+            <div class="card-body">
+              <i class="bi bi-geo-alt-fill display-5 text-danger mb-3"></i>
+              <h5 class="card-title">Location</h5>
+              <p class="card-text">Remote, India</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Media Query -->
+<style>
+  @media (max-width: 576px) {
+    .contact-section h2 {
+      font-size: 1.5rem;
+    }
+
+    .contact-section .card-text {
+      font-size: 0.95rem;
+    }
+
+    .contact-section .card i {
+      font-size: 2rem;
+    }
+  }
+</style>
+
+
+<!-- Custom Media Query -->
+<style>
+  @media (max-width: 576px) {
+    .contact-section h2 {
+      font-size: 1.5rem;
+    }
+
+    .contact-section .card-text {
+      font-size: 0.95rem;
+    }
+
+    .contact-section .card i {
+      font-size: 2rem;
+    }
+  }
+</style>
+
+
+<!-- Footer Section -->
+<footer class="bg-dark text-white pt-5 pb-3 mt-5" id="about">
+  <div class="container text-center">
+    <!-- Row with 3 Columns -->
+    <div class="row g-5 justify-content-center">
+
+      <!-- Logo and Description -->
+      <div class="col-12 col-md-4">
+        <h4 class="fw-bold text-primary mb-3">Prozo-Life</h4>
+        <p class="text-light small">
+          Your trusted partner in education, career & growth. <br>
+          Learn with us from anywhere!
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-12 col-md-4">
+        <h5 class="bg-primary text-white d-inline-block px-3 py-2 rounded mb-3">Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="#home" class="text-white text-decoration-none d-block py-1">🏠 Home</a></li>
+          <li><a href="#service" class="text-white text-decoration-none d-block py-1">💼 Our Services</a></li>
+          <li><a href="#how-we-work" class="text-white text-decoration-none d-block py-1">🔧 How We Work</a></li>
+          <li><a href="#question" class="text-white text-decoration-none d-block py-1">❓ FAQs</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-12 col-md-4">
+        <h5 class="bg-primary text-white d-inline-block px-3 py-2 rounded mb-3">Contact Us</h5>
+        <p class="mb-2">
+          <i class="bi bi-envelope-fill me-2"></i>
+          <a href="mailto:support@prozo-life.com" class="text-white text-decoration-none">support@prozo-life.com</a>
+        </p>
+        <p class="mb-2">
+          <i class="bi bi-telephone-fill me-2"></i>
+          <a href="tel:+919883017317" class="text-white text-decoration-none">+91-9883017317</a>
+        </p>
+        <p>
+          <i class="bi bi-geo-alt-fill me-2"></i>
+          <a href="https://www.google.com/maps/place/India" target="_blank" class="text-white text-decoration-none">Remote, India</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <hr class="border-secondary my-4 w-100">
+
+    <!-- Footer Bottom -->
+    <div class="row w-100 align-items-center">
+      <div class="col-md-6 text-md-start text-center mb-2 mb-md-0">
+        <p class="mb-0 small">&copy; 2025 <strong>Prozo-Life</strong>. All rights reserved.</p>
+      </div>
+      <div class="col-md-6 text-md-end text-center">
+        <a href="https://github.com/pankajkumar12167480" class="text-white me-3 fs-5"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.instagram.com/pk__py.mob" class="text-white me-3 fs-5"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/abhishek-rathor-151a462a1" class="text-white fs-5"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+<!-- Responsive tweaks (optional) -->
+<style>
+  @media (max-width: 576px) {
+    footer h4, footer h5 {
+      font-size: 1.2rem;
+    }
+
+    footer p, footer a {
+      font-size: 0.95rem;
+    }
+  }
+</style>
+
+
+
+
+
+  
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+</body>
+</html>
+
+  
+ 
+
+  

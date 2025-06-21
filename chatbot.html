@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ProzoLife Chatbot</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    #chatbot {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 320px;
+      max-height: 500px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      z-index: 9999;
+    }
+    .chat-header {
+      background-color: #0d6efd;
+      color: white;
+      padding: 10px;
+      font-weight: bold;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+    .chat-body {
+      background: #f8f9fa;
+      padding: 10px;
+      height: 300px;
+      overflow-y: auto;
+      font-size: 14px;
+    }
+    .chat-footer {
+      padding: 10px;
+      background: white;
+      border-top: 1px solid #ddd;
+    }
+    .user-msg {
+      text-align: right;
+      margin-bottom: 8px;
+      color: #0d6efd;
+    }
+    .bot-msg {
+      text-align: left;
+      margin-bottom: 8px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Chatbot -->
+<div class="card" id="chatbot">
+  <div class="chat-header">
+    ProzoLife Chatbot
+  </div>
+  <div class="chat-body" id="chat-body">
+    <div class="bot-msg">👋 Hi! I’m your ProzoLife assistant. Ask me anything about our services or joining process.</div>
+  </div>
+  <div class="chat-footer">
+    <div class="input-group">
+      <input type="text" class="form-control" id="user-input" placeholder="Type your question...">
+      <button class="btn btn-primary" onclick="handleChat()">Send</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const chatbotBody = document.getElementById('chat-body');
+
+  function handleChat() {
+    const input = document.getElementById('user-input');
+    const question = input.value.trim();
+
+    if (question === '') return;
+
+    // Show user message
+    chatbotBody.innerHTML += `<div class="user-msg">${question}</div>`;
+    input.value = '';
+
+    // Scroll to bottom
+    chatbotBody.scrollTop = chatbotBody.scrollHeight;
+
+    // Bot response after slight delay
+    setTimeout(() => {
+      const response = getBotResponse(question.toLowerCase());
+      chatbotBody.innerHTML += `<div class="bot-msg">${response}</div>`;
+      chatbotBody.scrollTop = chatbotBody.scrollHeight;
+    }, 600);
+  }
+
+  function getBotResponse(input) {
+    if (input.includes("services")) return "We offer Website Dev, App Dev, and AI/ML solutions.";
+    if (input.includes("join") || input.includes("developer")) return "You can join as a Developer by filling the registration form on the homepage.";
+    if (input.includes("client") || input.includes("customer")) return "To get your project built, register as a Customer. We’ll assign a developer.";
+    if (input.includes("fees") || input.includes("charge")) return "ProzoLife doesn’t charge upfront. It depends on project type and duration.";
+    if (input.includes("batch") || input.includes("start")) return "The next onboarding batch starts on 11th June at 10:00 AM.";
+    if (input.includes("contact")) return "You can WhatsApp us at +91 78146 22250 or call +91 72475 99094.";
+
+    return "I'm sorry, I didn't understand that. You can ask about services, batches, or how to join!";
+  }
+</script>
+
+</body>
+</html>

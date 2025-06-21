@@ -1,0 +1,292 @@
+
+  body {
+    padding-top: 80px; /* adjust as per navbar height */
+  }
+
+  .custom-fixed-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+    background-color:white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+
+.rows{
+   
+  background-color:white;
+}
+.navbar-brand{
+ 
+  width:300px
+}
+.navbar-brand img {
+   width:20%;
+   height: 20%;
+    border-radius:50%;
+    
+
+    
+}
+/* General navbar link hover effect */
+.custom-nav .nav-link {
+  color: #000;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+
+/* Hover effect: underline on hover */
+
+.custom-nav .nav-link:hover {
+  color: #075fe3; 
+  text-decoration: none;
+}
+
+/* Optional: Underline animation effect */
+.custom-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #007bff;
+  left: 0;
+  bottom: 0;
+  transition: width 0.3s ease;
+}
+
+ .custom-nav .nav-link:hover::after {
+  width: 100%;
+}
+
+
+
+.nav-item a{
+  font-weight: 700;
+}
+
+.pankaj img{
+  width:150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: white;
+  border:1px solid rgb(16, 19, 16);
+  
+}
+
+
+
+.login{
+    padding:3px 3px;
+    color:#000;
+    background: linear-gradient(to right, #0ACEFE, #2699FB);
+    border-radius: 5px;  
+}
+
+
+.bannercontent h1 {
+    font-size: 52px;
+    font-weight: 700;
+}
+.bannercontent p{
+    font-size:18px;
+}
+
+.bannercontent h1 span {
+    color: #2699FB;
+}
+.bannercontent p{
+    display: inline;
+    color:rgb(10, 1, 1);
+    
+    /* background:linear-gradient( to right, rgb(35, 30, 43),gray) */
+}
+.bannercontent ul{
+    list-style:none;
+}
+.bannercontent ul li{
+    font-size:18px;
+
+}
+.bannercontent ul li i{
+
+ color: #2699FB;
+ padding-right:5px;
+}
+/* .photo{
+    width:500px;
+    height:200px;
+} */
+
+.bannercontentbtn button{
+    width: 50%;
+    padding:10px 0px;
+    border-radius:5px;
+}
+.bannercontentbtn button:first-child{
+    color:white;
+    background: linear-gradient(to right, #0ACEFE, #2699FB);
+}
+.bannerform{
+    padding:40px;
+    border-radius: 10px;
+
+   
+}
+.bannerform h3{
+    font-size: 18px;
+    font-weight: 700;
+}
+.bannerform button{
+    width:100%;
+    padding:10px 0px;
+    border:2px solid rgb(54, 57, 54);
+    color:white;
+    border-radius: 20px;
+    background: linear-gradient(to right, #0ACEFE, #2699FB);
+}
+
+.highlight-section{
+    background-color: #F7FAFF;
+}
+.highlight-section h2{
+    color:#0A2134;
+    font-size: 36px;
+    font-weight: 700;
+
+}
+.highlight-section p{
+    font-size: 18px;
+}
+.test{
+    display:inline-block;
+    font-size:xx-large;
+   padding-right: 5px;
+   border-radius: 10px;
+   background-color: transparent;
+}
+
+.img-shadow{
+   background: linear-gradient(to bottom, #0ACEFE, #2699FB);
+    border-radius: 10px;
+}
+.highlight-item {
+    background: linear-gradient(to right, #0ACEFE, #2699FB);
+
+}
+.highlight-item h4{ 
+    font-size:20px;
+    font-weight: 600;
+
+}
+.highlight-item p{
+    font-size: 16px;
+
+}
+
+
+
+
+.highlight-section ol {
+  counter-reset: custom-counter;
+  padding-left: 0;
+  list-style: none;
+}
+
+.highlight-section ol li {
+  position: relative;
+  padding-left: 50px;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+/* Numbered Circle */
+.highlight-section ol li::before {
+  counter-increment: custom-counter;
+  content: counter(custom-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #007bff; /* Default blue */
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 32px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover Effect on li */
+.highlight-section ol li:hover {
+  color: #007bff;
+}
+
+/* Hover Effect on circle */
+.highlight-section ol li:hover::before {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: scale(1.1);     /* Slight zoom effect */
+}
+
+
+
+
+
+
+  .faq-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #007bff;
+    color: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+
+
+  
+
+.modal-content {
+  backdrop-filter: blur(10px);
+  background: rgba(30, 30, 30, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.typewriter-text {
+  font-family: 'Courier New', monospace;
+  font-size: 2.2rem;
+  white-space: nowrap;
+}
+
+#typewriter-text::after {
+  content: '|';
+  animation: blink 0.7s infinite;
+  color: #5d5fef;
+  font-weight: bold;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.customer{
+  /* border:1px solid black; */
+  width:300px;
+ 
+}
+.customer .modal-content {
+  height: 350px; /* or any value you want */
+  overflow: hidden;
+}
+
+
+
